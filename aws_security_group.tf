@@ -143,7 +143,7 @@ resource "aws_security_group" "bia_alb" {
     to_port          = 80
     }, {
     cidr_blocks      = ["0.0.0.0/0"]
-    description      = "libertado para o mundo"
+    description      = "liberado para o mundo"
     from_port        = 443
     ipv6_cidr_blocks = []
     prefix_list_ids  = []

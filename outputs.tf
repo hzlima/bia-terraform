@@ -19,6 +19,12 @@ output "instance_public_id" {
 }
 
 output "rds_endpoint" {
-    description = "Endpoint do RDS da BIA"
-    value = aws_db_instance.bia.endpoint
+  description = "Endpoint do RDS da BIA"
+  value       = aws_db_instance.bia.endpoint
 }
+
+output "rds_secrets" {
+  description = "Secrets associado ao RDS"
+  value       = tolist(aws_db_instance.bia.master_user_secret)[0].secret_arn
+}
+
