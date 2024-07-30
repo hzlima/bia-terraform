@@ -28,3 +28,7 @@ output "rds_secrets" {
   value       = tolist(aws_db_instance.bia.master_user_secret)[0].secret_arn
 }
 
+output "bia_repo_url" {
+  description = "Endereco repositorio ECR"
+  value       = aws_ecr_repository.bia.repository_url
+}
