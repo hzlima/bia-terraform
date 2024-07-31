@@ -8,6 +8,10 @@ resource "aws_autoscaling_group" "ecs" {
   health_check_type         = "EC2"
   protect_from_scale_in     = false
 
+  lifecycle {
+    ignore_changes = [desired_capacity]
+  }
+
   launch_template {
     id      = aws_launch_template.ecs_ec2.id
     version = "$Latest"
