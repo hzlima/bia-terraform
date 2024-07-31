@@ -31,3 +31,8 @@ resource "aws_iam_role" "role-acesso-ssm" {
   tags                  = {}
   tags_all              = {}
 }
+
+resource "aws_iam_role_policy_attachment" "role_acesso_ssm_policy" {
+  role       = aws_iam_role.role-acesso-ssm.name
+  policy_arn = aws_iam_policy.get_secret_bia_db.arn
+}
