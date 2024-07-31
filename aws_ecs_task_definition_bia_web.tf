@@ -7,7 +7,7 @@ resource "aws_ecs_task_definition" "bia-web" {
     name              = "bia",
     image             = "${aws_ecr_repository.bia.repository_url}:latest", // Imagem do ECR
     essential         = true                                               // Container essencial
-    portMappings      = [{ containerPort = 8080, hostPort = 80 }],         // Mapeamento de porta
+    portMappings      = [{ containerPort = 8080, hostPort = 0 }],          // Mapeamento de porta. 0 para trabalhar com portas aleatórias
     cpu               = 1024                                               // 1 VCPU
     memoryReservation = 400                                                // Soft Limit 400MB
     environment = [
