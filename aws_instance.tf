@@ -14,7 +14,7 @@ resource "aws_instance" "bia-dev" {
   vpc_security_group_ids = [aws_security_group.bia-dev.id]
 
   root_block_device {
-    volume_size = 8
+    volume_size = 12
   }
 
   iam_instance_profile = aws_iam_instance_profile.role-acesso-ssm.name
